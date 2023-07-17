@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <Title> Mude a cor </Title>
+    <meta charset="utf-8">
+
+  <style>
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 80vh;
+        background-color: bisque;
+    }
+
+    .box {
+        width: 446px;
+      height: 560px;
+      border: solid #000000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    button{
+        font-size: 20px;
+        padding:10px;
+        margin: 10px;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div class="box">
+    <img id="image" src="img/palhaço1.png">
+  </div>
+
+  <button onclick="mudarcor()"> Trocar Cor do cabelo </button>
+
+  <script>
+    function mudarcor() {
+      var box = document.querySelector('.box');
+      var coratual = box.style.backgroundColor;
+      var coraleatoria = '#' + Math.floor(Math.random() * 16777215).toString(16);
+
+      while (coraleatoria === coratual) {
+        coraleatoria = '#' + Math.floor(Math.random() * 16777215).toString(16);
+      }
+
+      box.style.backgroundColor = coraleatoria;
+    }
+  </script>
+
+</body>
+</html>
